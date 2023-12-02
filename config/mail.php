@@ -46,6 +46,17 @@ return [
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
         ],
 
+        'inbox' => [
+            'driver' => 'imap',
+            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+            'port' => env('MAIL_PORT', 993),
+            'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
+            'validate_cert' => true,
+            'username' => env('MAIL_USERNAME'),
+            'password' => env('MAIL_PASSWORD'),
+            'protocol' => 'imap', // You can also use 'pop3'
+        ],
+
         'ses' => [
             'transport' => 'ses',
         ],

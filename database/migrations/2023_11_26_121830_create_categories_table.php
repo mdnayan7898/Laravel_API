@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('des')->nullable();
             $table->string('file')->nullable();
             $table->timestamps();
+            $table->softDeletes()->default(null);
         });
     }
 

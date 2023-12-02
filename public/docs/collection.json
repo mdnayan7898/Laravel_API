@@ -1,0 +1,344 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/nayan.pro"
+        }
+    ],
+    "info": {
+        "name": "API Documentation for CRUD",
+        "_postman_id": "fbb070d7-442e-4535-90fb-192eeae911c1",
+        "description": "This it CRUD Operation with Auth.",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Categories",
+            "description": "\nAPIs for managing user Categories.",
+            "item": [
+                {
+                    "name": "Get a list of all categories.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/categories",
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "14",
+                                    "description": "The page number (default is 1).",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "1",
+                                    "description": "The number of categories per page (default is 10).",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/categories?page=14&per_page=1"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n   \"status\": \"success\",\n   \"data\": [\n       {\n           \"id\": 1,\n           \"name\": \"Category 1\",\n           \"des\": \"Description of Category 1\",\n           \"created_at\": \"2023-01-01 12:00:00\",\n           \"updated_at\": \"2023-01-01 12:30:00\"\n       },\n       \/\/ Other categories\n   ]\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get details of a specific category.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/categories\/:category_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/categories\/:category_id",
+                            "variable": [
+                                {
+                                    "id": "category_id",
+                                    "key": "category_id",
+                                    "value": "1",
+                                    "description": "The ID of the category."
+                                },
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "9",
+                                    "description": "The ID of the category."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n   \"status\": \"success\",\n   \"data\": {\n       \"id\": 1,\n       \"name\": \"Category 1\",\n       \"des\": \"Description of Category 1\",\n       \"created_at\": \"2023-01-01 12:00:00\",\n       \"updated_at\": \"2023-01-01 12:30:00\"\n   }\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n   \"status\": \"error\",\n   \"message\": \"Category not found\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Create a new category.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/categories",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/categories"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"voluptatem\",\"des\":\"ea\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n   \"status\": \"success\",\n   \"data\": {\n       \"id\": 2,\n       \"name\": \"New Category\",\n       \"des\": \"Description of New Category\",\n       \"created_at\": \"2023-02-01 14:00:00\",\n       \"updated_at\": \"2023-02-01 14:00:00\"\n   }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update a category.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/categories\/:category_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/categories\/:category_id",
+                            "variable": [
+                                {
+                                    "id": "category_id",
+                                    "key": "category_id",
+                                    "value": "1",
+                                    "description": "The ID of the category."
+                                },
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "12",
+                                    "description": "The ID of the category to update."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"sit\",\"des\":\"illum\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n   \"status\": \"success\",\n   \"data\": {\n       \"id\": 2,\n       \"name\": \"Updated Category\",\n       \"des\": \"Updated Description\",\n       \"created_at\": \"2023-02-01 14:00:00\",\n       \"updated_at\": \"2023-02-01 15:00:00\"\n   }\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n   \"status\": \"error\",\n   \"message\": \"Category not found\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Delete a category.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/categories\/:category_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/categories\/:category_id",
+                            "variable": [
+                                {
+                                    "id": "category_id",
+                                    "key": "category_id",
+                                    "value": "1",
+                                    "description": "The ID of the category."
+                                },
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "3",
+                                    "description": "The ID of the category to delete."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n   \"status\": \"success\",\n   \"message\": \"Category deleted successfully\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n   \"status\": \"error\",\n   \"message\": \"Category not found\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/links",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/links",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/links"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "59"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":1,\"category_id\":3,\"name\":\"Deon Maggio\",\"url\":\"http:\\\/\\\/www.abshire.com\\\/maxime-in-non-doloremque-aut-odit-quos-quo\",\"category\":{\"id\":3,\"name\":\"Sheridan Veum\",\"des\":\"Voluptatem quia consequatur unde in explicabo distinctio.\",\"file\":\"myfile.jpeg\"}},{\"id\":2,\"category_id\":5,\"name\":\"Mr. Ludwig O'Keefe\",\"url\":\"http:\\\/\\\/okon.com\\\/officia-dolorem-dolor-quasi-debitis-qui-sit-fuga.html\",\"category\":{\"id\":5,\"name\":\"Ernestine Pfannerstill\",\"des\":\"Alias dolor perferendis ducimus corrupti ut quisquam corrupti.\",\"file\":\"myfile.jpeg\"}},{\"id\":3,\"category_id\":7,\"name\":\"Mr. Conner Kub II\",\"url\":\"http:\\\/\\\/www.murazik.com\\\/est-non-quidem-voluptates-soluta.html\",\"category\":{\"id\":7,\"name\":\"Roma Hamill III\",\"des\":\"Corporis qui autem repellat est earum nisi.\",\"file\":\"myfile.jpeg\"}},{\"id\":4,\"category_id\":1,\"name\":\"Jerel Spinka\",\"url\":\"http:\\\/\\\/daugherty.com\\\/provident-illo-aperiam-eos-harum-nam-veniam-nesciunt\",\"category\":{\"id\":1,\"name\":\"Aurore Reilly\",\"des\":\"Quasi voluptatibus occaecati molestiae non sunt.\",\"file\":\"myfile.jpeg\"}},{\"id\":5,\"category_id\":2,\"name\":\"Craig Prohaska\",\"url\":\"http:\\\/\\\/www.towne.info\\\/dolores-sit-alias-asperiores-nobis-dolor\",\"category\":{\"id\":2,\"name\":\"Cordell Strosin\",\"des\":\"A occaecati aliquid veritatis eius consequatur iste.\",\"file\":\"myfile.jpeg\"}}],\"links\":{\"first\":\"http:\\\/\\\/nayan.pro\\\/api\\\/links?page=1\",\"last\":\"http:\\\/\\\/nayan.pro\\\/api\\\/links?page=6\",\"prev\":null,\"next\":\"http:\\\/\\\/nayan.pro\\\/api\\\/links?page=2\"},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":6,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/nayan.pro\\\/api\\\/links?page=1\",\"label\":\"1\",\"active\":true},{\"url\":\"http:\\\/\\\/nayan.pro\\\/api\\\/links?page=2\",\"label\":\"2\",\"active\":false},{\"url\":\"http:\\\/\\\/nayan.pro\\\/api\\\/links?page=3\",\"label\":\"3\",\"active\":false},{\"url\":\"http:\\\/\\\/nayan.pro\\\/api\\\/links?page=4\",\"label\":\"4\",\"active\":false},{\"url\":\"http:\\\/\\\/nayan.pro\\\/api\\\/links?page=5\",\"label\":\"5\",\"active\":false},{\"url\":\"http:\\\/\\\/nayan.pro\\\/api\\\/links?page=6\",\"label\":\"6\",\"active\":false},{\"url\":\"http:\\\/\\\/nayan.pro\\\/api\\\/links?page=2\",\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/nayan.pro\\\/api\\\/links\",\"per_page\":5,\"to\":5,\"total\":30}}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

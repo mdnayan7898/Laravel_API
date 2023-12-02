@@ -1,0 +1,44 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/links
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":1,"category_id":3,"name":"Deon Maggio","url":"http:\/\/www.abshire.com\/maxime-in-non-doloremque-aut-odit-quos-quo","category":{"id":3,"name":"Sheridan Veum","des":"Voluptatem quia consequatur unde in explicabo distinctio.","file":"myfile.jpeg"}},{"id":2,"category_id":5,"name":"Mr. Ludwig O''Keefe","url":"http:\/\/okon.com\/officia-dolorem-dolor-quasi-debitis-qui-sit-fuga.html","category":{"id":5,"name":"Ernestine Pfannerstill","des":"Alias dolor perferendis ducimus corrupti ut quisquam corrupti.","file":"myfile.jpeg"}},{"id":3,"category_id":7,"name":"Mr. Conner Kub II","url":"http:\/\/www.murazik.com\/est-non-quidem-voluptates-soluta.html","category":{"id":7,"name":"Roma Hamill III","des":"Corporis qui autem repellat est earum nisi.","file":"myfile.jpeg"}},{"id":4,"category_id":1,"name":"Jerel Spinka","url":"http:\/\/daugherty.com\/provident-illo-aperiam-eos-harum-nam-veniam-nesciunt","category":{"id":1,"name":"Aurore Reilly","des":"Quasi voluptatibus occaecati molestiae non sunt.","file":"myfile.jpeg"}},{"id":5,"category_id":2,"name":"Craig Prohaska","url":"http:\/\/www.towne.info\/dolores-sit-alias-asperiores-nobis-dolor","category":{"id":2,"name":"Cordell Strosin","des":"A occaecati aliquid veritatis eius consequatur iste.","file":"myfile.jpeg"}}],"links":{"first":"http:\/\/nayan.pro\/api\/links?page=1","last":"http:\/\/nayan.pro\/api\/links?page=6","prev":null,"next":"http:\/\/nayan.pro\/api\/links?page=2"},"meta":{"current_page":1,"from":1,"last_page":6,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/nayan.pro\/api\/links?page=1","label":"1","active":true},{"url":"http:\/\/nayan.pro\/api\/links?page=2","label":"2","active":false},{"url":"http:\/\/nayan.pro\/api\/links?page=3","label":"3","active":false},{"url":"http:\/\/nayan.pro\/api\/links?page=4","label":"4","active":false},{"url":"http:\/\/nayan.pro\/api\/links?page=5","label":"5","active":false},{"url":"http:\/\/nayan.pro\/api\/links?page=6","label":"6","active":false},{"url":"http:\/\/nayan.pro\/api\/links?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/nayan.pro\/api\/links","per_page":5,"to":5,"total":30}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '59'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

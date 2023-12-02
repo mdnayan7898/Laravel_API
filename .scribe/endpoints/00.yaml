@@ -1,0 +1,392 @@
+name: Categories
+description: |-
+
+  APIs for managing user Categories.
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/categories
+    metadata:
+      groupName: Categories
+      groupDescription: |-
+
+        APIs for managing user Categories.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get a list of all categories.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      page:
+        name: page
+        description: 'The page number (default is 1).'
+        required: false
+        example: 14
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      per_page:
+        name: per_page
+        description: 'The number of categories per page (default is 10).'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanQueryParameters:
+      page: 14
+      per_page: 1
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+             "status": "success",
+             "data": [
+                 {
+                     "id": 1,
+                     "name": "Category 1",
+                     "des": "Description of Category 1",
+                     "created_at": "2023-01-01 12:00:00",
+                     "updated_at": "2023-01-01 12:30:00"
+                 },
+                 // Other categories
+             ]
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/categories/{category_id}'
+    metadata:
+      groupName: Categories
+      groupDescription: |-
+
+        APIs for managing user Categories.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get details of a specific category.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      category_id:
+        name: category_id
+        description: 'The ID of the category.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      id:
+        name: id
+        description: 'The ID of the category.'
+        required: true
+        example: 9
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      category_id: 1
+      id: 9
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+             "status": "success",
+             "data": {
+                 "id": 1,
+                 "name": "Category 1",
+                 "des": "Description of Category 1",
+                 "created_at": "2023-01-01 12:00:00",
+                 "updated_at": "2023-01-01 12:30:00"
+             }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+             "status": "error",
+             "message": "Category not found"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/categories
+    metadata:
+      groupName: Categories
+      groupDescription: |-
+
+        APIs for managing user Categories.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a new category.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The name of the category.'
+        required: true
+        example: voluptatem
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      des:
+        name: des
+        description: 'The description of the category.'
+        required: true
+        example: ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      name: voluptatem
+      des: ea
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+             "status": "success",
+             "data": {
+                 "id": 2,
+                 "name": "New Category",
+                 "des": "Description of New Category",
+                 "created_at": "2023-02-01 14:00:00",
+                 "updated_at": "2023-02-01 14:00:00"
+             }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/categories/{category_id}'
+    metadata:
+      groupName: Categories
+      groupDescription: |-
+
+        APIs for managing user Categories.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update a category.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      category_id:
+        name: category_id
+        description: 'The ID of the category.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      id:
+        name: id
+        description: 'The ID of the category to update.'
+        required: true
+        example: 12
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      category_id: 1
+      id: 12
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'max:255 The new name of the category.'
+        required: true
+        example: sit
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      des:
+        name: des
+        description: 'The new description of the category.'
+        required: false
+        example: illum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      name: sit
+      des: illum
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+             "status": "success",
+             "data": {
+                 "id": 2,
+                 "name": "Updated Category",
+                 "des": "Updated Description",
+                 "created_at": "2023-02-01 14:00:00",
+                 "updated_at": "2023-02-01 15:00:00"
+             }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+             "status": "error",
+             "message": "Category not found"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/categories/{category_id}'
+    metadata:
+      groupName: Categories
+      groupDescription: |-
+
+        APIs for managing user Categories.
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete a category.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      category_id:
+        name: category_id
+        description: 'The ID of the category.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      id:
+        name: id
+        description: 'The ID of the category to delete.'
+        required: true
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      category_id: 1
+      id: 3
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+             "status": "success",
+             "message": "Category deleted successfully"
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+             "status": "error",
+             "message": "Category not found"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

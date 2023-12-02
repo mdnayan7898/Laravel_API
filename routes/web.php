@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Mail\TestingMail;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\MailController;
+use App\Http\Controllers\RequestController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +18,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+
+Route::get('/send-email', [MailController::class, 'sendEmail'])->name('send.email');
+Route::get('/show-email', [MailController::class, 'showMail'])->name('show.email');
+Route::get('/request-show', [RequestController::class, 'index'])->name('index.request');
+Route::get('/show-chche', [RequestController::class, 'checkCache'])->name('index.request');
+
